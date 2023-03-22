@@ -1,0 +1,21 @@
+Sub Macro1()
+
+    ActiveWindow.SmallScroll ToRight:=4
+    Range("M5").Select
+    ActiveCell.FormulaR1C1 = "Brnch Match"
+    Range("M6").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=RC[-4]=RC[-5]"
+    Range("M6").Select
+    Selection.AutoFill Destination:=Range("M6:M54")
+    Range("M6:M54").Select
+    Range("N5").Select
+    ActiveCell.FormulaR1C1 = "Date Match"
+    Range("N6").Select
+    ActiveCell.FormulaR1C1 = "=RC[-9]=RC[-10]"
+    Range("N6").Select
+    ActiveWindow.SmallScroll ToRight:=4
+    Selection.AutoFill Destination:=Range("N6:N54")
+    Range("N6:N54").Select
+    Range("N1").Select
+End Sub
